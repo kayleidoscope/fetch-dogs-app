@@ -1,5 +1,5 @@
-function getDogImages() {
-    fetch('https://dog.ceo/api/breeds/image/random/3')
+function getDogImages(desiredDogs) {
+    fetch(`https://dog.ceo/api/breeds/image/random/${desiredDogs}`)
         .then(response => response.json())
         .then(responseJson => displayResults(responseJson))
         .catch(error => alert('Something went wrong. Try again later.'));
@@ -7,11 +7,12 @@ function getDogImages() {
 
 function displayResults(responseJson) {
     console.log(responseJson);
-    $('.results-img').replaceWith(
-       `<img src="${responseJson.message[0]}" class="results-img">
-       <img src="${responseJson.message[1]}" class="results-img">
-       <img src="${responseJson.message[2]}" class="results-img">`
-    )
+    let crate = "";
+    for (let i = 0; i < responseJson.message.length; i++) {
+        crate = crate + `<img src="${responseJson.message[i]}" class="results-img">`;
+    }
+    console.log(crate)
+    $('.results-img').replaceWith(crate);
     $('.results').removeClass('hidden');
 }
 
@@ -21,7 +22,9 @@ function watchForm() {
         console.log('`watchForm` ran');
         const desiredDogs = $('#number-of-doggos').val();
         console.log(`Finding ${desiredDogs} good pups...`)
-        getDogImages();
+        getDogImages(desiredDogs);
+        $('#number-of-doggos').trigger("reset");
+        $('#number-of-doggos').val('');
     })
 }
 
