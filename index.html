@@ -10,16 +10,26 @@
     </head>
     <body>
         <h1>Fetch dogs!</h1>
-        <form>
-            <label for="number-of-doggos">How many doggos do you want? Choose between 1 and 50.</label>
-            <input type="number" id="number-of-doggos" name="number-of-doggos" value=3 min=1 max=50 required>
-            <input type="submit" value="Get some dogs!">
-        </form>
+        <div class="many-dogs">
+        <h2>Do you want a lot of dogs?</h2>
+            <form>
+                <label for="number-of-doggos">Choose between 1 and 50.</label>
+                <input type="number" id="number-of-doggos" name="number-of-doggos" value=3 min=1 max=50 required>
+                <input type="submit" value="Get some dogs!">
+            </form>
+        </div>
+        <h2>Or one dog of a specific breed?</h2>
+            <form class="breed-dog">
+                <label for="breed">Choose a breed.</label>
+                <input type="text" id="breed" name="breed" required>
+                <input type="submit" value="Get a dog!">
+            </form>
+    </div>
         <div class="container">
             <section class="results hidden">
                 <h2>Good puppers!</h2>
                 <div class="pup-pics">
-                    <img class="results-img" alt="placeholder">
+                    <!-- <img class="results-img" alt="placeholder"> -->
                 </div>
             </section>
         </div>
