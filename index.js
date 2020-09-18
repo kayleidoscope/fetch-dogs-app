@@ -15,17 +15,12 @@ function displayResults(responseJson) {
     $('.results').removeClass('hidden');
 }
 
-/*
-function handleNumberSubmit() {
-    $('#number-of-doggos').submit(function(event) {
-        event.preventDefault
-    })
-}
-*/
-
 function watchForm() {
     $('form').submit(event => {
         event.preventDefault();
+        console.log('`watchForm` ran');
+        const desiredDogs = $('#number-of-doggos').val();
+        console.log(`Finding ${desiredDogs} good pups...`)
         getDogImages();
     })
 }
