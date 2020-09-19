@@ -1,7 +1,75 @@
+body {
+    margin: 0;
+    background-color: #CFDCF2;
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive; 
+    text-align: center;
+    font-size: 60px;
+}
+
+h2 {
+    font-family: 'Grandstander', cursive;
+    margin: auto 10px;
+}
+
+p, label, input {
+    font-family: 'Roboto', sans-serif;
+    margin: auto 20px;
+}
+
+label {
+    line-height: 2;
+}
+
 .hidden {
     display: none;
 }
 
+.pup-pics {
+    display: flex;
+    flex-direction: column;
+}
+
 .pup-pics img {
     width: 100%;
+}
+
+#number-of-doggos, #breed {
+    width: 150px;
+    height: 30px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.results {
+    background-color: #A7F1BC;
+    padding-top: 10px;
+    border-top: 2px dashed #463730;
+}
+
+.results img {
+    max-width: 400px;;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+}
+
+@media all and (min-width: 800px) {
+    .group {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .many-dogs, .breed-item {
+        width: 50%;
+    }
+
+    .pup-pics {
+        flex-direction: row;
+        flex-wrap: wrap;
+    };
 }
