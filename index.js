@@ -17,7 +17,7 @@ function displayResults(responseJson) {
     $('.pup-pics').empty();
     //iterates through JSON data to find HTML image elements, and adds them to class pup-pics
     for (let i = 0; i < responseJson.message.length; i++) {
-        $('.pup-pics').append(`<img src="${responseJson.message[i]}" class="results-img">`);
+        $('.pup-pics').append(`<img src="${responseJson.message[i]}" class="results-img" alt="random dog photo">`);
     }
     //removes class hidden so photos show up
     $('.results').removeClass('hidden');
@@ -87,7 +87,7 @@ function displayBreed(responseJson) {
     //use getRandomInt function to choose a random dig pic
     let dogNum = getRandomInt(responseJson);
     //add that dog pic to pup-pics
-    $('.pup-pics').append(`<img src="${responseJson.message[dogNum]}" class="results-img">`)
+    $('.pup-pics').append(`<img src="${responseJson.message[dogNum]}" class="results-img" alt="random dog photo">`)
     //remove class hidden
     $('.results').removeClass('hidden');
 }
